@@ -2,6 +2,8 @@
 
 A flexible, lightweight and customizable in-memory image caching service for Flutter. Optimized for decoding and caching `ui.Image` instances in memory. Ideal for prefetching, smooth scroll performance, and low-latency rendering.
 
+![CdxImageCache](https://ibb.co/GfYvTwQY)
+
 Supports LRU (Least Recently Used) and no-eviction strategies.
 
 ---
