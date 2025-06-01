@@ -1,7 +1,10 @@
 name: cdx_image_cache
-description: "A new Flutter project."
+description: A lightweight Flutter image cache system with memory decoding support and custom fetch logic.
 version: 0.0.1
-homepage:
+homepage: https://github.com/Codedix/cdx_image_cache
+repository: https://github.com/Codedix/cdx_image_cache
+issue_tracker: https://github.com/Codedix/cdx_image_cache/issues
+license: MIT
 
 environment:
   sdk: ^3.8.0
