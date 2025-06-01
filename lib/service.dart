@@ -180,7 +180,7 @@ class MemoryImageCacheService {
     }).catchError((e) {
       _log('Fetch error for $url: $e');
       _inFlight.remove(url);
-      return null;
+      throw e;
     });
 
     _log('Starting fetch: $url');
