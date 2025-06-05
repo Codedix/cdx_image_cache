@@ -10,7 +10,9 @@ void main() async {
   // Initialize the singleton image cache service
   final cacheService = MemoryImageCacheService();
   cacheService.init(
-    strategy: ImageCacheStrategy.lru(maxSizeBytes: 200 * 1024 * 1024), // 200 MB cache size
+    strategy: ImageCacheStrategy.lru(
+      maxSizeBytes: 200 * 1024 * 1024,
+    ), // 200 MB cache size
     fetchTimeout: const Duration(seconds: 10),
     fetchFunction: (url) async {
       // you can use any HTTP client or custom logic here
@@ -67,9 +69,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Image Cache Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
+        appBar: AppBar(title: const Text('Plugin example app')),
         body: ListView.builder(
           itemCount: _imageUrls.length,
           itemBuilder: (context, index) {

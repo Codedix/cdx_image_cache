@@ -30,9 +30,7 @@ Supports LRU (Least Recently Used) and no-eviction strategies.
 
 ```yaml
 dependencies:
-  image_memory_cache:
-    git:
-      url: https://github.com/your-username/image_memory_cache.git
+  cdx_image_cache: ^0.0.3
 ```
 
 ### 2. Usage
@@ -113,16 +111,16 @@ ImageMemoryCacheService({
 });
 ```
 Methods:
-* Uint8List? getIfAvailable(String url)
-* ui.Image? getDecodedIfAvailable(String url)
-* Future<ui.Image?> getDecodedImage(String url)
-* void prefetchImages(Iterable<String> urls)
-* Future<void> waitForAllFetches()
-* void clearCache({String? url})
+* `Uint8List? getIfAvailable(String url)`
+* `ui.Image? getDecodedIfAvailable(String url)`
+* `Future<ui.Image?> getDecodedImage(String url)`
+* `void prefetchImages(Iterable<String> urls)`
+* `Future<void> waitForAllFetches()`
+* `void clearCache({String? url})`
 
 ### License
 MIT
 
 ### Author
-Developed by Codedix
+Developed by [Codedix](https://codedix.com)
 

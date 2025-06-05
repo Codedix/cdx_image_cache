@@ -170,18 +170,21 @@ class MemoryImageCacheService {
   Future<ImageCacheEntry?>? _fetchAndCache(String url) {
     if (_inFlight.containsKey(url)) return _inFlight[url]!;
 
-    final future = _fetch(url).timeout(_timeout).then((bytes) async {
-      final decoded = await _decode(bytes);
-      final entry = ImageCacheEntry(bytes: bytes, image: decoded);
-      _strategy.put(url, entry);
-      _log('Fetched and cached: $url (${bytes.length} bytes)');
-      _inFlight.remove(url);
-      return entry;
-    }).catchError((e) {
-      _log('Fetch error for $url: $e');
-      _inFlight.remove(url);
-      throw e;
-    });
+    final future = _fetch(url)
+        .timeout(_timeout)
+        .then((bytes) async {
+          final decoded = await _decode(bytes);
+          final entry = ImageCacheEntry(bytes: bytes, image: decoded);
+          _strategy.put(url, entry);
+          _log('Fetched and cached: $url (${bytes.length} bytes)');
+          _inFlight.remove(url);
+          return entry;
+        })
+        .catchError((e) {
+          _log('Fetch error for $url: $e');
+          _inFlight.remove(url);
+          throw e;
+        });
 
     _log('Starting fetch: $url');
     _inFlight[url] = future;

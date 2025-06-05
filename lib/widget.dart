@@ -56,9 +56,7 @@ class CachedImageMemory extends StatelessWidget {
     // If the image is already decoded and available in memory, show it immediately.
     final decoded = cacheService.getDecodedIfAvailable(url);
     if (decoded != null) {
-      return RepaintBoundary(
-        child: _imageWidget(decoded),
-      );
+      return RepaintBoundary(child: _imageWidget(decoded));
     }
 
     // Otherwise, fetch and decode the image asynchronously.
@@ -86,10 +84,7 @@ class CachedImageMemory extends StatelessWidget {
               duration: fadeDuration,
               tween: Tween(begin: 0.0, end: 1.0),
               builder: (context, value, child) {
-                return Opacity(
-                  opacity: value,
-                  child: child,
-                );
+                return Opacity(opacity: value, child: child);
               },
               child: _imageWidget(image),
             );
