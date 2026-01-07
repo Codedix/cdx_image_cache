@@ -19,6 +19,9 @@ class CachedImageMemory extends StatelessWidget {
   /// Optional width of the image.
   final double? width;
 
+  /// Optional image fit
+  final BoxFit? fit;
+
   /// Custom builder to render the image bytes manually (not used here directly).
   final Widget Function(BuildContext context, Uint8List data)? builder;
 
@@ -43,6 +46,7 @@ class CachedImageMemory extends StatelessWidget {
     required this.cacheService,
     this.height,
     this.width,
+    this.fit,
     this.builder,
     this.loadingBuilder,
     this.errorBuilder,
@@ -103,7 +107,7 @@ class CachedImageMemory extends StatelessWidget {
     return RawImage(
       key: ValueKey(url),
       image: image,
-      fit: BoxFit.cover,
+      fit: fit ?? BoxFit.cover,
       filterQuality: FilterQuality.none,
       height: height,
       width: width,
