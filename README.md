@@ -1,8 +1,18 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Codedix/cdx_image_cache/main/cdx_image_cache.png" alt="CdxImageCache Logo" width="400">
+</div>
+
+<div align="center">
+
 # CdxImageCache
 
-A flexible, lightweight and customizable in-memory image caching service for Flutter. Optimized for decoding and caching `ui.Image` instances in memory. Ideal for prefetching, smooth scroll performance, and low-latency rendering.
+[![pub package](https://img.shields.io/pub/v/cdx_image_cache.svg)](https://pub.dev/packages/cdx_image_cache)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Flutter](https://img.shields.io/badge/Flutter-%3E%3D1.17.0-blue.svg)](https://flutter.dev)
 
-<img src="https://i.ibb.co/mrxKMQ3p/Cdx-Image-Chage.png" alt="CdxImageCache" style="margin:auto; text-align: center; height: 200px;" />
+</div>
+
+A flexible, lightweight and customizable in-memory image caching service for Flutter. Optimized for decoding and caching `ui.Image` instances in memory. Ideal for prefetching, smooth scroll performance, and low-latency rendering.
 
 Supports LRU (Least Recently Used) and no-eviction strategies.
 

@@ -1,3 +1,6 @@
+## 0.0.4
+* Added logo image to README header
+
 ## 0.0.3
 * Format code and update README
 
