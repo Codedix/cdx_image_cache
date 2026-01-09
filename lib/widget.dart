@@ -19,6 +19,9 @@ class CachedImageMemory extends StatelessWidget {
   /// Optional width of the image.
   final double? width;
 
+  /// Optional image fit
+  final BoxFit? fit;
+
   /// Custom builder to render the image bytes manually (not used here directly).
   final Widget Function(BuildContext context, Uint8List data)? builder;
 
@@ -37,20 +40,18 @@ class CachedImageMemory extends StatelessWidget {
   /// Duration for the fade-in animation of the image.
   final Duration fadeDuration;
 
-  final BoxFit fit;
-
   const CachedImageMemory({
     super.key,
     required this.url,
     required this.cacheService,
     this.height,
     this.width,
+    this.fit,
     this.builder,
     this.loadingBuilder,
     this.errorBuilder,
     this.onReady,
     this.onError,
-    this.fit = BoxFit.cover,
     this.fadeDuration = const Duration(milliseconds: 300),
   });
 
@@ -106,7 +107,7 @@ class CachedImageMemory extends StatelessWidget {
     return RawImage(
       key: ValueKey(url),
       image: image,
-      fit: fit,
+      fit: fit ?? BoxFit.cover,
       filterQuality: FilterQuality.none,
       height: height,
       width: width,

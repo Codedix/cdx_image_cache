@@ -134,6 +134,12 @@ class MemoryImageCacheService {
     }
   }
 
+  void prefetch(String? url) {
+    if (url == null || url.isEmpty) return;
+    if (_strategy.get(url) != null) return;
+    _fetchAndCache(url);
+  }
+
   void _prefetch(String url) {
     if (_strategy.get(url) != null) return;
     _fetchAndCache(url);
