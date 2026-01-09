@@ -37,6 +37,8 @@ class CachedImageMemory extends StatelessWidget {
   /// Duration for the fade-in animation of the image.
   final Duration fadeDuration;
 
+  final BoxFit fit;
+
   const CachedImageMemory({
     super.key,
     required this.url,
@@ -48,6 +50,7 @@ class CachedImageMemory extends StatelessWidget {
     this.errorBuilder,
     this.onReady,
     this.onError,
+    this.fit = BoxFit.cover,
     this.fadeDuration = const Duration(milliseconds: 300),
   });
 
@@ -103,7 +106,7 @@ class CachedImageMemory extends StatelessWidget {
     return RawImage(
       key: ValueKey(url),
       image: image,
-      fit: BoxFit.cover,
+      fit: fit,
       filterQuality: FilterQuality.none,
       height: height,
       width: width,
